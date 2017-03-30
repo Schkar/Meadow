@@ -1,0 +1,10 @@
+@keyframes cloudMoveAnimation {
+  0% {position: absolute; left: -10vw;}
+  100% {position: absolute; left: 100vw;}
+}
+
+@keyframes raysAnimation {
+  0% {border-right-color: yellow; transform: rotate(0deg);}
+  50% {border-right-color: orange;}
+  100% {border-right-color: yellow; transform: rotate(180deg);}
+}

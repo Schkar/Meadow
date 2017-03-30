@@ -1,0 +1,46 @@
+@mixin cloudMixin($size) {
+  @if $size > 2 {
+    $size: 2;
+  }
+  @else if $size < 0.5{
+    $size: 0.5;
+  }
+  background-color: #f2f9fe;
+  width: 4.25vw * $size;
+  height: 3vh * $size;
+  border-radius: 100px;
+  background: linear-gradient(to bottom,  #f6fbfb 50%, #cdf3fb 100%);
+  position: relative;
+  @if $size > 0 and $size < 1  {
+    top: 0vh + random(30);
+  }
+  @else if $size >= 1 and $size <2 {
+    top: 1vh + random(29);
+  }
+  @else {
+    top: 2vh + random(28);
+  }
+  &::after,&::before{
+    content: "";
+    background: #f6fbfb;
+    border: 0;
+    position: absolute;
+    border-radius: 100px;
+  }
+  &::after{
+    width: 1.5vw * $size;
+    height: 2.5vh * $size;
+    top: -1.25vh * $size;
+    left: 0.75vw * $size;
+  }
+  &::before{
+    width: 1.75vw * $size;
+    height: 3vh * $size;
+    top: -2vh * $size;
+    left: 1.75vw * $size;
+  }
+  animation-name: cloudMoveAnimation;
+  animation-duration: 60s + random(30);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

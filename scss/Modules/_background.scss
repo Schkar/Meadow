@@ -1,0 +1,13 @@
+body{
+  height: 98.45vh;
+  background: #168be5;
+  /* Old Browsers */background: -moz-linear-gradient(top, #168be5 0%, #d6d6d6 44%, #29ce47 56%, #29ce47 100%);
+   /* FF3.6+ */background: -webkit-gradient(left top, left bottom, color-stop(0%, #168be5), color-stop(44%, #d6d6d6), color-stop(56%, #29ce47), color-stop(100%, #29ce47));
+  /* Chrome, Safari4+ */background: -webkit-linear-gradient(top, #168be5 0%, #d6d6d6 44%, #29ce47 56%, #29ce47 100%);
+   /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, #168be5 0%, #d6d6d6 44%, #29ce47 56%, #29ce47 100%);
+   /* Opera 11.10+ */background: -ms-linear-gradient(top, #168be5 0%, #d6d6d6 44%, #29ce47 56%, #29ce47 100%);
+   /* IE 10+ */background: linear-gradient(to bottom, #168be5 0%, #d6d6d6 44%, #29ce47 56%, #29ce47 100%);
+  /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#168be5', endColorstr='#29ce47', GradientType=0 );
+  /* IE6-9 */
+  background-repeat: no-repeat;
+}
