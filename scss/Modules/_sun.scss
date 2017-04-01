@@ -1,0 +1,23 @@
+.sun_holder{
+  .sun{
+    background: yellow; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Safari */
+    background: -o-radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Standard syntax */
+    width: 8vw;
+    height: 15vh;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 25px 5px yellow;
+    border: 0 transparent;
+    left: 3vw;
+    top: 3vh;
+  }
+
+  @for $i from 1 through 8{
+    .rays_#{$i}{
+      @include raysMixin($i);
+    }
+  }
+}

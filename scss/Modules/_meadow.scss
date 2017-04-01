@@ -1,38 +1,15 @@
-.sun{
-  background: yellow; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Safari */
-  background: -o-radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Firefox 3.6 to 15 */
-  background: radial-gradient(circle, orange 25%, yellow 55%, yellow 100%); /* Standard syntax */
-  width: 10vw;
-  height: 20vh;
-  border-radius: 50%;
-  position: relative;
-  box-shadow: 0 0 25px 5px yellow;
-  border: 0 transparent;
-}
-
-.rays{
-  width: 0;
-  height: 0;
-  // transform: rotate(45deg);
-  border-right: 70px solid yellow;
-  border-bottom: 10px solid transparent;
-  border-top: 10px solid transparent;
-  animation-duration: 2s;
-  animation-name: raysAnimation;
-  animation-iteration-count: infinite;
-  transform-origin: 200% 0%;
-}
-
 .cloud_1{
   @include cloudMixin(1);
 }
 
 .cloud_2{
-  @include cloudMixin(2);
+  @include cloudMixin(1.7);
 }
 
 .cloud_3{
-  @include cloudMixin(0.1);
+  @include cloudMixin(0.7);
+}
+
+.cloud_4{
+  @include cloudMixin(1.3);
 }

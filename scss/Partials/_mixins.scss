@@ -44,3 +44,21 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+@mixin raysMixin($rotate) {
+  left: 0.7vw;
+  top: 9.5vh;
+  width: 0;
+  height: 0;
+  border-right: 6vw solid yellow;
+  border-bottom: 2.5vh solid transparent;
+  border-top: 2.5vh solid transparent;
+  border-radius: 10px;
+  animation-delay: $rotate+s;
+  animation-duration: 8s;
+  animation-name: raysAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 200% 0%;
+  position: absolute;
+}
