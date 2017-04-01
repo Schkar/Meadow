@@ -13,3 +13,15 @@
 .cloud_4{
   @include cloudMixin(1.3);
 }
+
+.cloud_5{
+  @include cloudMixin(2);
+}
+
+.cloud_6{
+  @include cloudMixin(1.5);
+}
+
+.cloud_7{
+  @include cloudMixin(0.9);
+}

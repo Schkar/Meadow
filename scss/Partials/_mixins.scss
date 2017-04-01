@@ -1,4 +1,5 @@
 @mixin cloudMixin($size) {
+  visibility: hidden;
   @if $size > 2 {
     $size: 2;
   }
@@ -10,7 +11,7 @@
   height: 3vh * $size;
   border-radius: 100px;
   background: linear-gradient(to bottom,  #f6fbfb 50%, #cdf3fb 100%);
-  position: relative;
+  position: absolute;
   @if $size > 0 and $size < 1  {
     top: 0vh + random(30);
   }
@@ -20,6 +21,7 @@
   @else {
     top: 2vh + random(28);
   }
+  left: -10vw;
   &::after,&::before{
     content: "";
     background: #f6fbfb;
@@ -40,25 +42,52 @@
     left: 1.75vw * $size;
   }
   animation-name: cloudMoveAnimation;
-  animation-duration: 60s + random(30);
+  animation-duration: 70s + random(20);
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-delay: random(15)+s;
 }
 
 @mixin raysMixin($rotate) {
-  left: 0.7vw;
-  top: 9.5vh;
+  left: -24%;
+  top: 33%;
   width: 0;
   height: 0;
   border-right: 6vw solid yellow;
   border-bottom: 2.5vh solid transparent;
   border-top: 2.5vh solid transparent;
-  border-radius: 10px;
+  transform: rotate(0deg);
   animation-delay: $rotate+s;
   animation-duration: 8s;
   animation-name: raysAnimation;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  transform-origin: 200% 0%;
+  transform-origin: 100% 50%;
   position: absolute;
+  z-index: -1;
+}
+
+@mixin petalMixin($size) {
+  @if $size > 1 {
+    $size: 1;
+  }
+    height: 5vh*$size;
+    width: 0;
+    position: absolute;
+    top: 0.5vh;
+    left: -6.0vw;
+    border-top: 3vh*$size solid transparent;
+    border-left: 9vw*$size solid transparent;
+    border-bottom: 3vh*$size solid transparent;
+    border-radius: 50px 0 0 50px;
+    z-index: -1;
+    transform-origin: 100% 50%;
+    animation-name: petalColors;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+}
+
+@mixin flowerMixin {
+
 }
