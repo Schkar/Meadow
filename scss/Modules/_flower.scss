@@ -1,27 +1,6 @@
-.flower_holder{
-  position: relative;
-  left: 50vw;
-  top: 50vh;
-  .head{
-    height: 12vh;
-    width: 6vw;
-    background-color: yellow;
-    border-radius: 50%;
-  }
-  @for $i from 1 through 7{
-    .petals_#{$i}{
-      @include petalMixin(1);
-      transform: rotate(360/7*$i+deg);
-    }
-  }
-
-  .stalk{
-    height: 35vh;
-    width: 2vw;
-    background: linear-gradient(to left, #1e8f33 10%, #35b109 50%, #1e8f33 90%, #1e8f33 100%);
-    position: absolute;
-    top: 10vh;
-    left: 2vw;
-    z-index: -2;
+@for $j from 1 through 12{
+  .flower_holder_#{$j}{
+    @include flowerMixin(random(3)+random());
+      left: -4vw+3*$j;
   }
 }

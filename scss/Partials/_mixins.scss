@@ -68,26 +68,66 @@
 }
 
 @mixin petalMixin($size) {
-  @if $size > 1 {
-    $size: 1;
+  height: 2vh*$size;
+  width: 0;
+  position: absolute;
+  top: -0.3vh*$size;
+  left: -1.2vw*$size;
+  border-top: 0.6vh*$size solid transparent;
+  border-left: 1.8vw*$size solid transparent;
+  border-bottom: 0.6vh*$size solid transparent;
+  border-radius: 50px 0 0 50px;
+  z-index: -1;
+  transform-origin: 100% 50%;
+  opacity: 0;
+}
+
+@mixin flowerMixin($size) {
+  @if $size > 3 {
+    $size: 3;
   }
-    height: 5vh*$size;
-    width: 0;
-    position: absolute;
-    top: 0.5vh;
-    left: -6.0vw;
-    border-top: 3vh*$size solid transparent;
-    border-left: 9vw*$size solid transparent;
-    border-bottom: 3vh*$size solid transparent;
-    border-radius: 50px 0 0 50px;
-    z-index: -1;
-    transform-origin: 100% 50%;
-    animation-name: petalColors;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: 10s;
-}
+  top: 45vh+random(15);
+  position: relative;
+    .head{
+      height: 2.4vh*$size;
+      width: 1.2vw*$size;
+      background-color: yellow;
+      border-radius: 50%;
+    }
+    @for $i from 1 through 7{
+      .petals_#{$i}{
+        transform: rotate(360/7*$i+deg);
+        animation: petalsAppear 3s $i+s linear forwards, petalColors 10s 2s+$i linear, petalFall 10s 20s cubic-bezier(random(),random(),random(),random()) forwards;
+        @include petalMixin($size);
+      }
+    }
 
-@mixin flowerMixin {
+    .stalk{
+      height: 7vh*$size;
+      width: 0.4vw*$size;
+      background: linear-gradient(to left, #1e8f33 10%, #35b109 50%, #1e8f33 90%, #1e8f33 100%);
+      position: absolute;
+      top: 2vh*$size;
+      left: 0.4vw*$size;
+      z-index: -2;
+      &::before,&::after{
+        display: inline-block;
+        position: absolute;
+        content: "";
+        width: 1.2vw*$size;
+        height: 1.5vh*$size;
+        border-radius: 50px 0 50px 0;
+        background-color: darkgreen;
+        z-index: 100;
+      }
+      &::before{
+        top: 3vh*$size;
+        left: 0.2vw*$size;
+      }
+      &::after{
+        top: 5vh*$size;
+        left: -1vw*$size;
+      }
+    }
 
-}
+  }
