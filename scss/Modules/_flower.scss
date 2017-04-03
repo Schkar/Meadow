@@ -1,6 +1,6 @@
-@for $j from 1 through 12{
+@for $j from 1 through 6{
   .flower_holder_#{$j}{
     @include flowerMixin(random(3)+random());
-      left: -4vw+3*$j;
+      left: -6vw+10*$j;
   }
 }
