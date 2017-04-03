@@ -7,7 +7,7 @@
     $size: 0.5;
   }
   background-color: #f2f9fe;
-  @media (max-width: 500px){
+  @media (max-width: 700px){
     background-color: #07518b;
     background: linear-gradient(to bottom,  #063d69 50%, #07518b 100%);
   }
@@ -28,7 +28,7 @@
   left: -10vw;
   &::after,&::before{
     content: "";
-    @media (max-width: 500px){
+    @media (max-width: 700px){
       background: #063d69;
     }
     background: #f6fbfb;
@@ -53,6 +53,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-delay: random(15)+s;
+  z-index: 10;
 }
 
 @mixin raysMixin($rotate) {
@@ -72,7 +73,7 @@
   transform-origin: 100% 50%;
   position: absolute;
   z-index: -1;
-  @media (max-width: 500px){
+  @media (max-width: 700px){
     display: none;
   }
 }
@@ -109,10 +110,10 @@
         transform: rotate(360/7*$i+deg);
         @include petalMixin($size);
         animation: petalsAppear 3s $i+s linear forwards, petalColors 10s 2s+$i infinite linear;
-        @media (max-width: 500px){
+        @media (max-width: 700px){
+          border-left-color: #470949;
           opacity: 1;
-          border-left-color: #c40f9c;
-          animation: petalFall 10s 2s cubic-bezier(random(),random(),random(),random()) forwards, petalColors paused;
+          animation: petalFall 7s 2s cubic-bezier(random(),random(),random(),random()) forwards;
         }
       }
     }
